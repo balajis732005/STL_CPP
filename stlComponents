@@ -1,0 +1,139 @@
+STL (Standard Template Library)
+------------------------------
+
+I) STL Components:
+-----------------
+1) Containers
+2) Algorithms
+3) Iterator
+4) Function Objects
+5) Others
+
+
+II) Containers (Data Structures):
+--------------------------------
+II.I) Sequence Container:
+------------------------
+- Store Elements in Order of Insertion
+
+1) array - Fixed size array
+2) vector - Dynamic array
+3) deque - Double ended queue
+4) list - Doubly linked list
+5) formward_list - Singly linked list
+
+II.2) Associate Container:
+-------------------------
+- Data stored in Sorted Order (usually Red-Black Tree)
+- Operation - O(log N)
+
+1) set - unique keys
+2) multiset - duplicate keys allowed
+3) map - (key -> value) unique keys
+4) multimap - (key -> value) duplicate keys allowed
+
+II.3) Unordered Associate Container:
+-----------------------------------
+- Data stored using Hash Table
+- Operation - Average O(1)
+
+1) unordered_set - unique keys
+2) unordered_multiset - duplicate keys allowed
+3) unordered_map - (key -> value) unique keys
+4) unordered_multimap - (key -> value) duplicate keys allowed
+
+II.4) Container Adapter:
+-----------------------
+- Build on top of other container
+
+1) stack - LIFO
+2) queue - FIFO
+3) priority_queue - Heap(MAX by default)
+
+
+III) Algorithms:
+---------------
+- Algorithms operate on containers via iterators
+
+III.1) Searching:
+----------------
+1) find
+2) binary_search
+3) lower_bound
+4) upper_bound
+
+III.2) Sorting:
+--------------
+1) sort
+2) stable_sort
+3) partial_sort
+
+III.3) Counting:
+---------------
+1) count
+2) count_if
+
+III.4) Modification:
+-------------------
+1) reverse
+2) rotate
+3) next_permutation
+
+III.5) Numeric:
+--------------
+1) accumalate
+2) gcd
+3) lcm
+
+
+IV) Iterators:
+-------------
+
+1) Input - read-only
+2) Output - write-only
+3) Forward - forward traversal
+4) Bidirectional - forward + backward
+5) Random Access - vector, deque
+
+
+V) Function Objects:
+-------------------
+- Objects that behave like functions.
+
+
+VI) Others:
+----------
+1) pair
+2) tuple
+3) lambda function
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int bind = -1;
+        vector<int> temp;
+        for(int i=nums.size()-1;i>=1;i--){
+            if(nums.at(i)>nums.at(i-1)){
+                bind = i-1;
+                break;
+            }else{
+                temp.push_back(nums.at(i));
+            }
+        }
+        if(bind==-1){
+            reverse(nums.begin(), nums.end());
+        }else{
+            sort(temp.begin(), temp.end());
+            for(int i=0;i<temp.size();i++){
+                if(temp.at(i)>nums.get(bind)){
+                    int t = nums.at(bind);
+                    nums.at(bind) = temp.at(i);
+                    temp.at(i) = t;
+                    break;
+                }
+            }
+            sort(temp.begin(), temp.end());
+            
+        }
+    }
+};
