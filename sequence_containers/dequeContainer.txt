@@ -1,3 +1,4 @@
+- Deque = Double Ended Queue
 - All Methods in vector is applicable for deque
 - Difference :
 -- Deque is non-contiguos memory
