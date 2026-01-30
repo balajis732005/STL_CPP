@@ -1,0 +1,5 @@
+- All Methods in vector is applicable for deque
+- Difference :
+-- Deque is non-contiguos memory
+-- Insert front and back - O(1) Time Complexity
+-- push_back(), push_back() (OR) emplace_front(), emplace_back()
