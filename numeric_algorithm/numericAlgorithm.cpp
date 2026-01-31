@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <numeric>   // accumulate, gcd, lcm
+#include <numeric> 
 
 using namespace std;
 
@@ -15,11 +15,7 @@ int main(){
 
     vector<int> v = {1, 2, 3, 4, 5};
 
-    /**************************************
-     * 1) ACCUMULATE
-     **************************************/
-    cout << "===== ACCUMULATE =====" << endl;
-
+    // ACCUMULATE
     int sum = accumulate(v.begin(), v.end(), 0);
     cout << "Sum of elements = " << sum << endl;
 
@@ -32,24 +28,11 @@ int main(){
 
     cout << "Product of elements = " << product << endl;
 
-    cout << endl;
-
-    /**************************************
-     * 2) GCD
-     **************************************/
-    cout << "===== GCD =====" << endl;
-
+    // GCD
     int a = 24, b = 36;
-
     cout << "gcd(" << a << ", " << b << ") = " << gcd(a, b) << endl;
 
-    cout << endl;
-
-    /**************************************
-     * 3) LCM
-     **************************************/
-    cout << "===== LCM =====" << endl;
-
+    // LCM
     cout << "lcm(" << a << ", " << b << ") = " << lcm(a, b) << endl;
 
     return 0;
