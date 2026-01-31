@@ -13,16 +13,9 @@ using namespace std;
 
 int main(){
 
-    /**************************************
-     * 1) binary_search
-     **************************************/
-    cout << "===== BINARY SEARCH =====" << endl;
-
+    // BINARY SEARCH
     vector<int> bsVec = {5, 1, 4, 2, 3};
-
-    // binary_search REQUIRES sorted data
     sort(bsVec.begin(), bsVec.end());
-
     cout << "Sorted Vector : ";
     for(int x : bsVec){
         cout << x << " ";
@@ -36,13 +29,7 @@ int main(){
         cout << key << " NOT FOUND using binary_search" << endl;
     }
 
-    cout << endl;
-
-    /**************************************
-     * 2) stable_sort
-     **************************************/
-    cout << "===== STABLE SORT =====" << endl;
-
+    // STABLE_SORT
     // pair<value, original_id>
     vector<pair<int,char>> stVec = {
         {2,'A'}, {1,'B'}, {2,'C'}, {1,'D'}
@@ -74,15 +61,8 @@ int main(){
         (2,A) comes before (2,C)
     */
 
-    cout << endl;
-
-    /**************************************
-     * 3) partial_sort
-     **************************************/
-    cout << "===== PARTIAL SORT =====" << endl;
-
+    // PARTIAL_SORT
     vector<int> psVec = {9, 1, 8, 2, 7, 3, 6, 4, 5};
-
     cout << "Original Vector   : ";
     for(int x : psVec){
         cout << x << " ";
@@ -93,7 +73,6 @@ int main(){
 
     // Sort only first k elements
     partial_sort(psVec.begin(), psVec.begin() + k, psVec.end());
-
     cout << "After partial_sort (k=4): ";
     for(int x : psVec){
         cout << x << " ";
